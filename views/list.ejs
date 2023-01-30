@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+   <% if (kindOfDay === "Saturday" || kindOfDay === "Sunday"){ %>
+        <h1 style="color:Purple"><%= kindOfDay %> To Do List</h1>
+    <% } else { %>
+        <h1 style="color:blue"><%= kindOfDay %> To Do List</h1>
+    <% } %>
+
+   <!-- '<%' is a scriptlet tags which works on line by line basis.Every single line of code i.e.JS,you will need to add scriptlet tag.So the special thing about the scriptlet tag is that you have to added around any part of your code that
+    is not HTML. the code or logic written inside scriptlet tag isnot shown on webpage. -->
+
+</body>
+</html>
