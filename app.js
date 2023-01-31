@@ -33,6 +33,9 @@ app.post("/", function (req, res) {
    res.redirect("/");
    //this redirect to our home route.
 });
+app.get("/about",function(req,res){
+    res.render("about");
+})
 
 
 app.listen(3000, function () {
