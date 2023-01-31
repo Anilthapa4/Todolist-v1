@@ -3,30 +3,31 @@ import bodyParser from "body-parser";
 
 const app = express();
 
-var items=["Eat","Code","Sleep & Repeat"];
+let items=["Eat","Code","Sleep & Repeat"];
 
 app.set('view engine', 'ejs');
 //ejs template
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 
 app.get("/", function (req, res) {
     const today = new Date();
 
-    var options = {
+    let options = {
         weekday: "long",
         day: "numeric",
         month: "long"
     };
 
-    var day = today.toLocaleDateString("en-US", options);
+    let day = today.toLocaleDateString("en-US", options);
 
     res.render("list", { kindOfDay: day, newListItems:items});
 });
 
 app.post("/", function (req, res) {
-   var item=req.body.newitem;
+   let item=req.body.newitem;
    items.push(item);
    //this pushes the new added item to the array called "items".
    res.redirect("/");
